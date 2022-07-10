@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+<style type="text/css">
+  form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    background: #d6dade;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2),
+      0 1px 1px rgba(255, 255, 255, 0.2);
+  }
+  input:focus {
+    background: rgba(109, 127, 204, 0.08);
+    border: 1px solid #6d7fcc;
+    border-radius: 12px;
+  }
+
+  .button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #6d7fcc;
+    color: #fff;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    transition: all 0.3s;
+  }
+  .button:hover {
+    background: #fff;
+    color: #6d7fcc;
+    border: 1px solid #6d7fcc;
+    box-shadow: 4px 8px 24px rgba(109, 127, 204, 0.25);
+  }
+
+  .output {
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+  }
+  .selectFile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+{% endblock %} {% block content %}
+<h3>Time Series Forecasting</h3>
+<br />
+<h6>Silahkan pilih sektor untuk di-<i>forecast</i></h6>
+<form action="/action_page.php">
+  <label for="cars">Pilih sektor:</label>
+  <select name="cars" id="cars">
+    <option value="pertanian">Pertanian, Kehutanan, dan Perikanan</option>
+    <option value="pertambangan">Pertambangan dan Penggalian</option>
+    <option value="industri">Industri Pengolahan</option>
+    <option value="air">Pengadaan Air</option>
+    <option value="konstruksi">Konstruksi</option>
+    <option value="perdagangan">Perdagangan Besar dan Eceran</option>
+    <option value="transportasi">Transportasi dan Pergudangan</option>
+    <option value="akomodasi">Penyediaan Akomodasi dan Makan Minum</option>
+    <option value="informasi">Informasi dan Komunikasi</option>
+    <option value="keuangan">Jasa Keuangan dan Asuransi</option>
+    <option value="real_estate">Real Estate</option>
+    <option value="administrasi">Administrasi Pemerintahan</option>
+    <option value="pendidikan">Jasa Pendidikan</option>
+    <option value="kesehatan">Jasa Kesehatan dan Kegiatan Sosial</option>
+  </select>
+
+  <input type="submit" class="button" value="Forecast" />
+</form>
+
+<h7>Klik 'Forecast' maka akan menampilkan hasil forecast</h7>
+<br />
+<h7>Atau darg and drop atau select file data berformat csv untuk diforecast</h7>
+<div class="selectFile">
+  <label for="file">Pilih file</label>
+  <input type="file" name="files[]" id="file" />
+  <input type="submit" class="button" value="Forecast data" />
+</div>
+{% endblock %}

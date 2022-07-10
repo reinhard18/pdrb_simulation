@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../static/src/fa6-solid_money-bill-trend-up.svg">
+    {% block head %}
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script>src="{{ url_for('static', filename='js/main.js') }}"</script>
+</head>
+
+    <title>{% block title %}{% endblock %}Simulasi PDRB</title>
+    {% endblock %}
+  </head>
+  <body class="">
+    <div class="wrapper">
+
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+           <h4><img src="/static/src/fa6-solid_money-bill-trend-up.svg" alt="" class="brand">Prediksi PDRB</43>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Menu Prediksi Sektor</p>
+            
+            <li>
+                <a href="{{ url_for('pertanian') }}"><img src="/static/src/pertanian.svg" alt="pertanian" title="Pertanian" class="menu-icon">Pertanian</a>
+            </li>
+            
+            <li>
+                <a href="{{ url_for('dagang') }}"><img src="/static/src/perdagangan.svg" alt="perdagangan" class="menu-icon">Perdagangan</a>
+            </li>
+            <li>
+                <a href="{{ url_for('konstruksi') }}"><img src="/static/src/konstruksi.svg" alt="konstruksi" class="menu-icon">Konstruksi</a>
+            </li>
+            <li>
+                <a href="{{ url_for('listrik') }}"><img src="/static/src/listrik.svg" alt="listrik" class="menu-icon">Listrik</a>
+            </li>
+            <li>
+                <a href="{{ url_for('forecast') }}"><img src="/static/src/forecast.svg" alt="forecast" class="menu-icon">Forecasting</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="notebook">Kunjungi Notebook</a>
+            </li>
+            <li>
+                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="dokumen">Kunjungi Dokumen</a>
+            </li>
+        </ul>
+    </nav>
+  
+      <!-- Page Content -->
+      <div id="content">
+          <!-- We'll fill this with dummy content -->
+          <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <img src="/static/src/fa-solid_align-left.svg" alt="" >
+                    </button>
+
+                </div>
+            </nav>
+
+            {% block content %}{% endblock %}
+        </div>
+      </div>
+  
+  </div>  
+  
+       <!-- jQuery CDN - Slim version (=without AJAX) -->
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <!-- Popper.JS -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+       <!-- Bootstrap JS -->
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+   
+       <script type="text/javascript">
+           $(document).ready(function () {
+               $('#sidebarCollapse').on('click', function () {
+                   $('#sidebar').toggleClass('active');
+               });
+           });
+       </script>
+  </body>
+
+
+</html>
